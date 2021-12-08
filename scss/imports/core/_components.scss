@@ -1,0 +1,334 @@
+// css img, button, heading, title, input, elements, components...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+// colors (tuỳ chỉnh)
+.--white-cl {
+    color: $white-cl;
+}
+.--black-cl {
+    color: $black-cl;
+}
+.--blue-cl {
+    color: $blue-cl;
+}
+
+.--unactive{
+    display: none;
+}
+
+// css article (nội dung chi tiết bài viết)
+article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        // font-family: ib; // font bold
+        display: block;
+    }
+    h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+        margin: 0 0 0.67rem 0;
+    }
+    h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+        margin: 0 0 0.75rem 0;
+    }
+    h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+        margin: 0 0 0.83rem 0;
+    }
+    h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+        margin: 0 0 1.12rem 0;
+    }
+    h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+        margin: 0 0 1.5rem 0;
+    }
+    h6 {
+        font-size: 0.67rem;
+        margin: 0 0 1.67rem 0;
+    }
+
+    p {
+        margin: 0 0 1.12rem 0;
+    }
+    strong {
+        font-family: 'Pb';
+    }
+    ol,
+    ul {
+        list-style: initial;
+        padding-left: 18px;
+    }
+    img {
+        display: inline-block;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 25px auto;
+    }
+    .video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        margin: 25px auto;
+        iframe,
+        video {
+            position: absolute;
+            @include size(100%);
+            top: 0;
+            left: 0;
+        }
+    }
+    @include xs {
+        img {
+            margin: 20px auto;
+        }
+    }
+}
+
+.btn{
+    font-family: 'Pb';
+    text-transform: uppercase;
+    color: $white-cl;
+    &.--submit{
+        background-color: #231f20;
+        display: block;
+        height: 20px;
+        max-width: 50px;
+        margin-left: auto;
+        p{
+            font-family: 'Pb';
+            line-height: 20px !important;
+            text-align: center;
+        }
+    }
+    &.--booking{
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        background-color: #525355;
+        color: $main-cl;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.7rem;
+        text-align: center;
+    }
+    &.--submit-rental{
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        background-color: #525355;
+        color: $main-cl;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        letter-spacing: -0.025em;
+        text-align: center;
+        max-width: none;
+        margin-left: unset;
+    }
+}
+
+.textbox{
+    &__heading{
+        font-family: 'Pl';
+        text-transform: uppercase;
+        font-size: var(--body14-fs);
+        line-height: var(--body14-lh);
+        color: $text-cl;
+    }
+    &__mainname{
+        font-family: 'Pb';
+        text-transform: uppercase;
+        font-size: var(--h5-fs);
+        line-height: var(--body14-lh);
+        letter-spacing: 0.3em;
+        color: #525355;
+        margin: 20px auto;
+        max-width: 220px;
+        position: relative;
+    }
+    &__info{
+        font-family: 'Arial';
+        line-height: var(--body12-lh);
+        letter-spacing: -0.025em;
+    }
+    &.--homepage{
+        text-align: center;
+        padding: 50px 88px;
+        .textbox__mainname::before{
+            content: '';
+            display: block;
+            background: $main-cl;
+            position: absolute;
+            top: 0;
+            right: 8px;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+    &.--projectdetails{
+        .textbox__heading{
+            letter-spacing: 0.2em;
+        }
+        .textbox__info{
+            letter-spacing: 0;
+            color: $text-cl;
+            font-size: 1.1rem;
+        }
+    }
+    &.--aboutus{
+        .textbox__mainname{
+            font-size: var(--h3-fs);
+            line-height: var(--h3-lh);
+            color: $main-cl;
+            letter-spacing: 0.6em;
+            margin: 0;
+        }
+        .textbox__info{
+            font-family: 'Pl';
+            color: #e4e4e4;
+            font-size: 1.8rem;
+            line-height: 4rem;
+            max-width: 860px;
+        }
+    }
+    &.--cafe{
+        .textbox__heading{
+            text-align: center;
+            color: $main-cl;
+            letter-spacing: 0.2em;
+            max-width: 82px;
+            margin: 0 auto;
+        }
+        .textbox__mainname{
+            color: $main-cl;
+        }
+        .textbox__info{
+            text-align: center;
+            margin: 0 auto;
+            color: #ebebeb;
+            max-width: 750px;
+        }
+    }
+    @include xs{
+        &.--homepage{
+            padding: 20px 0;
+        }
+        &.--aboutus{
+            .textbox__mainname{
+                font-size: 2.8rem;
+                line-height: 5.8rem;
+            }
+            .textbox__info{
+                font-size: 1.6rem;
+                line-height: 3.4rem;
+            }
+    }
+}
+}
+.itembox{
+    display: flex;
+    flex-direction: column;
+    .item__img{
+        min-width: 100%;
+        height: 0;
+        padding-bottom: 64%;
+        position: relative;
+        overflow: hidden;
+        transition: $t;
+        img{
+            @include midimg;
+            transition: $t;
+        }
+    }
+    .item__img:hover{
+        transition: $t;
+        transform: scale(0.95);
+    }
+    .item__info{
+        flex: 1;
+        &-text{
+            margin-top: 40px;
+            text-align: center;
+            span{
+                width: 16px;
+                height: 3px;
+                display: block;
+                background: $main-cl;
+                margin: 0 auto;
+                margin-bottom: 4px;
+            }
+            h2{
+                font-family: 'Pb';
+            }
+            p{
+                line-height: var(--item-box-text-lh);
+            }
+        }
+    }
+    &.--unactive{
+        display: none;
+    }
+    &.--studio{
+        display: block;
+        // padding: 30px 44px;
+        background-color: $main-cl;
+        text-align: center;
+        padding: 19px 18px 14px;
+        .studio-name{
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            line-height: 2rem;
+        }
+        p{
+            font-family: 'DINb';
+            font-size: 6.146rem;
+            line-height: 6.244rem;
+        }
+    }
+    &.--studioitem{
+        background-color: $black-cl;
+        align-items: center;
+        justify-content: center;
+        color: #b4b4b4;
+        font-family: 'Dinb';
+        font-size: 2.4rem;
+        width: 38px;
+        height: 38px;
+        border: 1px solid #464646;
+        cursor: pointer;
+    }
+    &.--studioitem.--active{
+        background-color: $main-cl;
+        color: $black-cl;
+    }
+}

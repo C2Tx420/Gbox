@@ -1,0 +1,94 @@
+// css header
+header{
+    --width-mobile-nav: 30px;
+    height: var(--height-header);
+    background-color: $header-bg;
+    position: relative;
+    .container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .header__mobile-nav{
+            @include visible(0);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 500;
+            span{
+                display: block;
+                width: var(--width-mobile-nav);
+                height: 2px;
+                background-color: $main-cl;
+            }
+        }
+        .header__mobile-nav.--active{
+            margin-left: 10px;
+            span{
+                display: none;
+            }
+        }
+        .header__mobile-nav.--active::before{
+            // transition: $t;
+            top: 36px;
+            transform: rotate(45deg);
+        }
+        .header__mobile-nav.--active::after{
+            transition: ease $t;
+            transform: rotate(130deg);
+        }
+        .header__mobile-nav::before{
+            content: '';
+            display: block;
+            width: var(--width-mobile-nav);
+            height: 2px;
+            background-color: $main-cl;
+            position: absolute;
+            top: 28px;
+            transition: ease $t;
+        }
+        .header__mobile-nav::after{
+            content: '';
+            display: block;
+            width: var(--width-mobile-nav);
+            height: 2px;
+            background-color: $main-cl;
+            position: absolute;
+            top: 40px;
+            transition: ease $t;
+        }
+        .header__logo{
+            @include mid;
+            display: block;
+            height: 45px;
+            width: 40px;
+            img{
+                margin: auto;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .header__social{
+            display: block;
+            height: 100%;
+            svg{
+                height: 120%;
+            }
+        }
+    }
+    @include xs{
+        .container{
+            .header__mobile-nav{
+                @include visible(1)
+            }
+            .header__mobile-nav::before{
+                top: 22px;
+            }
+            .header__mobile-nav::after{
+                top: 36px;
+            }
+        }
+    }
+}

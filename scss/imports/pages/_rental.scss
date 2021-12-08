@@ -1,0 +1,199 @@
+.rental{
+    textarea{
+        border: 1px solid #464646;
+    }
+    .mainwrapper{
+        .container{
+            display: flex;
+            gap: 50px;
+            .rental__main{
+                width: 30%;
+                height: 640px;
+                background-color: #525355;
+                padding-top: 72px;
+                padding-left: 22px;
+                .itembox{
+                    width: 120px;
+                    height: 116px;
+                }
+                h1{
+                    font-family: 'Pexb';
+                    font-size: 3.2rem;
+                    letter-spacing: -0.025em;
+                    color: $white-cl;
+                    padding: 28px 0;
+                }
+                &-info{
+                    h5{
+                        letter-spacing: 0.2em;
+                        color: #fff;
+                    }
+                    p{
+                        color: #fff;
+                    }
+                }
+            }
+            .rental__info{
+                flex: 1;
+                padding-top: 70px;
+                h2{
+                    font-family: 'Pexb';
+                    font-size: 2.8rem;
+                    letter-spacing: -0.025em;
+                    margin-bottom: 40px;
+                }
+                .info-details-wrap{
+                    display: flex;
+                    gap: 80px;
+                    label{
+                        display: block;
+                        line-height: 2rem;
+                    }
+                    input,textarea{
+                        width: 220px;
+                        margin-bottom: 26px;
+                    }
+                    input{
+                        border: none;
+                        border-bottom: 1px solid #000;
+                    }
+                    .info-details__right{
+                        .label-textarea{
+                            margin-bottom: 24px;
+                        }
+                    }
+                }
+                &-booking{
+                    h2{
+                        margin-bottom: 22px;
+                    }
+                    .booking__studio{
+                        &-list{
+                            display: flex;
+                            gap: 20px;
+                            padding-top: 8px;
+                            padding-bottom: 18px;
+                        }
+                    }
+                    .booking__requi{
+                        display: flex;
+                        gap: 80px;
+                        textarea{
+                            width: 220px;
+                        }
+                    }
+                    .booking__duration{
+                        margin-bottom: 20px;
+                        &-wrap{
+                            display: flex;
+                            align-items: center;
+                            gap: 36px;
+                        }
+                        .arrow{
+                            width: 9px;
+                            height: 15px;
+                            transform: rotateZ(-90deg);
+                        }
+                        .calendar{
+                            width: 22px;
+                            height: 22px;
+                        }
+                        &-input{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            border: 1px solid #464646;
+                            padding: 10px 12px;
+                            width: 220px;
+                            input{
+                                border: none;
+                                flex: 1;
+                            }
+                        }
+                    }
+                    .booking__prefer,.booking__more{
+                        input{
+                            width: 520px;
+                            line-height: 3.6rem;
+                            border: 1px solid #464646;
+                        }
+                    }
+                    .booking__submit{
+                        display: flex;
+                        padding-top: 60px;
+                        padding-bottom: 80px;
+                        gap: 22px;
+                        p{
+                            max-width: 200px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include xs{
+        .mainwrapper{
+            .container{
+                flex-direction: column;
+                gap: 0;
+                .rental__main{
+                    width: 100%;
+                    height: unset;
+                    padding: 0;
+                    padding-top: 30px;
+                    background-color: unset;
+                    display: flex;
+                    gap: 25px;
+                    h1,p,h5{
+                        color: $text-cl;
+                    }
+                    h1{
+                        padding: 0;
+                    }
+                }
+                .rental__info{
+                    padding-top: 30px;
+                    .info-details-wrap{
+                        flex-direction: column;
+                        gap: 0;
+                        input,textarea{
+                            width: 100%;
+                        }
+                    }
+                    &-booking{
+                        .booking__requi{
+                            flex-direction: column;
+                            gap: 0;
+                            textarea{
+                                width: 100%;
+                            }
+                            &-right{
+                                .noti{
+                                    display: none;
+                                }
+                            }
+                        }
+                        .booking__duration{
+                            &-wrap{
+                                flex-direction: column;
+                                gap: 10px;
+                            }
+                            &-input{
+                                width: 100%;
+                            }
+                            .arrow{
+                                transform: rotateZ(0);
+                            }
+                        }
+                        .booking__prefer,.booking__more{
+                            input{
+                                width: 100%;
+                                border: 1px solid #464646;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

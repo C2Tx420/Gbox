@@ -1,0 +1,61 @@
+.about{
+    nav,footer{
+    .container{
+        .wrap{
+            border: none;
+        }
+    }
+    }
+    .aboutus{
+    position: relative;
+    padding: 85px 0 40px;
+    .container{
+        .booking{
+            display: flex;
+            gap: 20px;
+            margin-top: 44px;
+            .btn{
+                background-color: $main-cl;
+                color: $text-cl;
+            }
+            p{
+                color: #e9e9ea;
+                font-size: var(--body14-fs);
+                line-height: 2rem;
+                max-width: 100px;
+            }
+        }
+    }
+    .aboutus__overlay{
+        background-color: $aboutus-bg;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        text-align: right;
+        svg{
+            height: 100%;
+            margin-right: 100px;
+            .cls-1{
+                fill: #242424;
+            }
+        }
+    }
+    @include xs{
+        padding: 42px 0 90px;
+        .aboutus__overlay{
+            svg{
+                height: auto;
+                width: 100%;
+                mix-blend-mode: normal;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                
+            }
+        }
+    }
+    }
+}

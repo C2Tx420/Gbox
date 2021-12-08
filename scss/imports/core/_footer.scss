@@ -1,0 +1,119 @@
+// css footer
+footer{
+    position: relative;
+    .container{
+        .wrap{
+            border-top: 1px solid $black-cl;
+            padding: 40px 0;    
+            .footer__top{
+                display: flex;
+                justify-content: space-between;
+                p{
+                    line-height: var(--default-lh);
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                }
+                &-left{
+                    max-width: 214px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    .tel{
+                        span{
+                            display: inline-block;
+                            width: 30px;
+                        }
+                    }
+                }
+                &-right{
+                    max-width: 50%;
+                    padding: 0 20px;
+                    .footer__right-top{
+                        max-width: 240px;
+                        margin-bottom: 50px;
+                    }
+                    .regform{
+                        display: flex;
+                        gap: 18px;
+                        &-left{
+                            width: 50%;
+                        }
+                        label{
+                            line-height: 0.66rem;
+                        }
+                        input{
+                            width: 100%;
+                            margin-bottom: 20px;
+                            background: transparent;
+                            border: none;
+                            border-bottom: 1px solid $black-cl;
+                            line-height: 2rem;
+                        }
+                        textarea{
+                            background-color: $main-cl;
+                            border: 1px solid $black-cl;
+                            line-height: 2rem;
+                            width: 100%;
+                            margin: 20px 0;
+                        }
+                        input
+                        ,textarea:focus{
+                            outline: none;
+                        }
+                        // &__left{
+                        //     position: relative;
+                        //     &-line{
+                        //         width: 100%;
+                        //         height: 1px;
+                        //         background-color: $black-cl;
+                        //         position: absolute;
+                        //         top: 109px;
+                        //     }
+                        // }
+            }
+                }
+            }
+            .footer__bottom{
+                text-align: center;
+                margin-top: 60px;
+                img{
+                    transform: rotateZ(270deg);
+                    width: 24px;
+                    height: 20px;
+                }
+                p{
+                    font-size: 1rem;
+                    line-height: var(--default-lh);
+                }
+            }
+        }
+    }
+    .footer__overlay{
+        background-color: $main-cl;
+        position: absolute;
+        top: 30%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    @include sm{
+        .container{
+            .wrap{
+                .footer__top{
+                    justify-content: center;
+                    &-left{
+                        text-align: center;
+                        gap: 0;
+                    }
+                    &-right{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .footer__overlay{
+            top: 60%;
+        }
+    }
+}

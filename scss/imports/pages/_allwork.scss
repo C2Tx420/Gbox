@@ -1,0 +1,92 @@
+.allwork{
+    &__heading{
+        max-width: 320px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        padding-top: 40px;
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            li{
+                a{
+                    font-family: 'Psb';
+                    color: $unactive-cl;
+                }
+                a.--active{
+                    color: $text-cl;
+                }
+                a:hover{
+                    color: $text-cl;
+                }
+            }
+        }
+    }
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+    &__loadmore{
+        padding: 75px 0;
+        a{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $text-cl;
+            font-family: 'Psb';
+            img{
+                margin-top: 5px;
+                width: 14px;
+                height: 10px;
+            }
+        }
+    }
+    .booking{
+        // position: fixed;
+        // right: 68px;
+        // bottom: 20px;
+        // z-index: 498;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 10px;
+        gap: 20px;
+        p{
+            font-size: var(--body14-fs);
+            line-height: 2rem;
+            text-align: right;
+            max-width: 110px;
+        }
+    }
+    @include sm{
+        .allwork{
+            &__list{
+                grid-template-columns: 1fr 1fr;
+                &-item:nth-child(n+7){
+                    display: none;
+                }
+            }
+        }        
+    }
+    @include xs{
+        .allwork{
+            &__list{
+                grid-template-columns: 1fr;
+                &-item:nth-child(n+6){
+                    display: none;
+                }
+            }
+        }        
+        .booking{
+            padding-top: 70px;
+            position: unset;
+            flex-direction: column;
+            align-items: center;
+            p{
+                text-align: center;
+            }
+        }
+    }
+}

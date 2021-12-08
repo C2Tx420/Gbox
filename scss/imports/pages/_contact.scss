@@ -1,0 +1,138 @@
+.contactbd{
+    .contact{
+        position: relative;
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .contact__logo{
+                width: 102px;
+                height: 127px;
+                margin-top: 96px;
+                .cls-1{
+                    fill: $white-cl;
+                }
+            }
+            .contact__info{
+                display: flex;
+                gap: 60px;
+                color: #f1f1f1;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                margin-left: 35px;
+                padding: 24px 0 58px;
+                .address{
+                    text-align: right;
+                    max-width: 180px;
+                }
+                .contact__info-right{
+                    .email{
+                        margin-bottom: 28px;
+                    }
+                    .tel{p{
+                        span{
+                            display: inline-block;
+                            width: 40px;
+                        }
+                    }
+                    }
+                }
+            }
+            .contact__arrow{
+                width: 15px;
+                height: 9px;
+                margin-bottom: 20px;
+                .cls-1{
+                    fill: $white-cl;
+                }
+            }
+        }
+        &__overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: $aboutus-bg;
+            z-index: -1;
+            overflow: hidden;
+            &-img{
+                opacity: 0.2;
+                @include midimg;
+            }
+            &-img:last-child{
+                display: none;
+            }
+        }
+        @include xs{
+            padding: 140px 0;
+            .container{
+                .contact__logo{
+                    display: none;
+                }
+                .contact__info{
+                    flex-direction: column-reverse;
+                    gap: 0;
+                    text-align: center;
+                    margin: 0;
+                    .address{
+                        text-align: center;
+                        max-width: 230px;
+                    }
+                }
+                .contact__arrow{
+                    display: none;
+                }
+            }
+            .contact__overlay{
+                &-img:last-child{
+                    display: block;
+                }
+                &-img:first-child{
+                    display: none;
+                }
+            }
+        }
+    }
+    nav{
+        .container{
+            .wrap{
+                border-bottom: none;
+            }
+        }
+    }
+    footer{
+        .wrap{
+            border-top: none;
+        }
+}
+    .container{
+        .wrap{
+            .footer__top{
+                &-right{
+                    max-width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 125px;
+                    .footer__right-top{
+                       width: 460px;
+                    }
+                }
+            }
+        }
+    }
+    .footer__overlay{
+        top: 0;
+    }
+    @include xs{
+        .container{
+            .wrap{
+        .footer__top{
+            display: none;
+        }
+        .footer__bottom{
+            margin-top: 0;
+        }
+    }
+}
+}}
