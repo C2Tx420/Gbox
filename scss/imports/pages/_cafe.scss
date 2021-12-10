@@ -82,10 +82,12 @@
         }
         &-item:hover{
             .gallery-item__overlay{
-               display: none
+               opacity: 0.5;
+               transition: $t;
             }
             .gallery-item__overlay2{
-                display: none;
+                @include visible(1);
+                transition: $t;
             }
         }
         &-item:nth-child(1){
